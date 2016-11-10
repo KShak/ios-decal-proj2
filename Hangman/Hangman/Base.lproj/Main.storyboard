@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6PC-9V-cAN">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -14,13 +19,298 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER GUESS HERE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va8-OU-0SX">
+                                <rect key="frame" x="39" y="180" width="155" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DS-pB-UnY">
+                                <rect key="frame" x="98" y="258" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="GUESS">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="guessButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="poP-an-qxe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# OF INCORRECT GUESSES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDj-0i-lS5">
+                                <rect key="frame" x="326" y="81" width="215" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="uj2-fC-Zkj">
+                                <rect key="frame" x="234" y="110" width="100" height="100"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="# OF INCORRECT GUESSES" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buu-hy-3PM">
+                                <rect key="frame" x="339" y="21" width="202" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="INCORRECT GUESSES" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoR-GD-PXB">
+                                <rect key="frame" x="375" y="132" width="167" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-Ah-Xnc">
+                                <rect key="frame" x="71" y="20" width="90" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="START OVER">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startOver" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ahq-4T-X8h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WORD GUESSING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-Ld-MP7">
+                                <rect key="frame" x="194" y="291" width="139.5" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GAME ONGOING" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rnh-Hu-ATa">
+                                <rect key="frame" x="51" y="110" width="131" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCORRECT GUESSES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUv-ud-3v8">
+                                <rect key="frame" x="368" y="180" width="174" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="WORD YOU'RE GUESSING" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSj-HY-UzT">
+                                <rect key="frame" x="188" y="253" width="192" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="top" secondItem="Rnh-Hu-ATa" secondAttribute="bottom" constant="96" id="0AP-XL-LFx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDj-0i-lS5" secondAttribute="trailing" constant="7" id="0mc-aO-RMD"/>
+                            <constraint firstItem="tSj-HY-UzT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2F5-Q4-D6s"/>
+                            <constraint firstItem="Rnh-Hu-ATa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="2YN-bt-aQX"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="leading" secondItem="Rnh-Hu-ATa" secondAttribute="trailing" constant="52" id="5Tp-nf-KWm"/>
+                            <constraint firstItem="Va8-OU-0SX" firstAttribute="top" secondItem="Rnh-Hu-ATa" secondAttribute="bottom" constant="40" id="5eu-BT-HYs"/>
+                            <constraint firstItem="0DS-pB-UnY" firstAttribute="top" secondItem="Va8-OU-0SX" secondAttribute="bottom" constant="48" id="6xA-PJ-zf6"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="leading" secondItem="IVm-Ah-Xnc" secondAttribute="trailing" constant="73" id="95w-QP-9hz"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="top" secondItem="buu-hy-3PM" secondAttribute="bottom" constant="59" id="9Or-Df-r7G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hoR-GD-PXB" secondAttribute="trailing" constant="6" id="ADq-18-hhH"/>
+                            <constraint firstItem="0DS-pB-UnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AWj-W8-sZN"/>
+                            <constraint firstItem="hoR-GD-PXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Atn-Fk-5fR"/>
+                            <constraint firstItem="Va8-OU-0SX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DSG-b7-8vo"/>
+                            <constraint firstItem="IVm-Ah-Xnc" firstAttribute="centerX" secondItem="Rnh-Hu-ATa" secondAttribute="centerX" id="GeW-el-PEY"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="top" secondItem="Va8-OU-0SX" secondAttribute="bottom" constant="58" id="H9p-bM-Xiz"/>
+                            <constraint firstItem="Rnh-Hu-ATa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HsM-LR-ugu"/>
+                            <constraint firstItem="hoR-GD-PXB" firstAttribute="top" secondItem="vDj-0i-lS5" secondAttribute="bottom" constant="30" id="Lw6-uO-yCg"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="top" secondItem="vDj-0i-lS5" secondAttribute="bottom" constant="8" id="MXs-y4-AMc"/>
+                            <constraint firstItem="hoR-GD-PXB" firstAttribute="top" secondItem="vDj-0i-lS5" secondAttribute="bottom" constant="8" id="NMX-SH-yZ5"/>
+                            <constraint firstItem="tSj-HY-UzT" firstAttribute="top" secondItem="uj2-fC-Zkj" secondAttribute="bottom" constant="43" id="O5e-pu-8w7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0DS-pB-UnY" secondAttribute="bottom" constant="32" id="R24-LF-dhe"/>
+                            <constraint firstItem="buu-hy-3PM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="RQe-z3-mVK"/>
+                            <constraint firstItem="lUv-ud-3v8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TNA-2A-6dL"/>
+                            <constraint firstItem="lUv-ud-3v8" firstAttribute="leading" secondItem="uj2-fC-Zkj" secondAttribute="trailing" constant="34" id="YZf-dx-l52"/>
+                            <constraint firstItem="buu-hy-3PM" firstAttribute="leading" secondItem="uj2-fC-Zkj" secondAttribute="trailing" constant="5" id="ZjK-dw-PZU"/>
+                            <constraint firstItem="0DS-pB-UnY" firstAttribute="top" secondItem="uj2-fC-Zkj" secondAttribute="bottom" constant="48" id="Zkp-2F-Dg8"/>
+                            <constraint firstItem="m8G-Ld-MP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cJV-g4-avU"/>
+                            <constraint firstItem="Va8-OU-0SX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="cqM-VD-3xL"/>
+                            <constraint firstItem="Rnh-Hu-ATa" firstAttribute="top" secondItem="IVm-Ah-Xnc" secondAttribute="bottom" constant="60" id="dWg-L3-GIc"/>
+                            <constraint firstItem="hoR-GD-PXB" firstAttribute="leading" secondItem="uj2-fC-Zkj" secondAttribute="trailing" constant="41" id="dbz-C1-DCA"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="leading" secondItem="0DS-pB-UnY" secondAttribute="trailing" constant="86" id="dpF-Nd-dG6"/>
+                            <constraint firstItem="buu-hy-3PM" firstAttribute="top" secondItem="uj2-fC-Zkj" secondAttribute="bottom" constant="15" id="eai-tU-yso"/>
+                            <constraint firstItem="vDj-0i-lS5" firstAttribute="leading" secondItem="uj2-fC-Zkj" secondAttribute="trailing" constant="-8" id="egz-vV-e8P"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="top" secondItem="IVm-Ah-Xnc" secondAttribute="bottom" constant="60" id="ere-8Y-kBB"/>
+                            <constraint firstItem="IVm-Ah-Xnc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fdy-Ix-VtO"/>
+                            <constraint firstItem="lUv-ud-3v8" firstAttribute="top" secondItem="hoR-GD-PXB" secondAttribute="bottom" constant="18" id="gB9-sX-Viu"/>
+                            <constraint firstItem="IVm-Ah-Xnc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="gMP-tp-a7K"/>
+                            <constraint firstItem="lUv-ud-3v8" firstAttribute="top" secondItem="hoR-GD-PXB" secondAttribute="bottom" constant="8" id="gXf-xi-pLn"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="top" secondItem="0DS-pB-UnY" secondAttribute="bottom" constant="20" id="hqV-p7-XBv"/>
+                            <constraint firstItem="0DS-pB-UnY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="78" id="k2M-2b-JT2"/>
+                            <constraint firstItem="m8G-Ld-MP7" firstAttribute="top" secondItem="tSj-HY-UzT" secondAttribute="bottom" constant="8" id="kVu-P0-W7b"/>
+                            <constraint firstItem="buu-hy-3PM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kvB-kq-3iB"/>
+                            <constraint firstItem="tSj-HY-UzT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lVV-G5-GhJ"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="leading" secondItem="Va8-OU-0SX" secondAttribute="trailing" constant="40" id="lY4-HK-eGX"/>
+                            <constraint firstItem="m8G-Ld-MP7" firstAttribute="top" secondItem="tSj-HY-UzT" secondAttribute="bottom" constant="8" id="mwe-Z2-uRR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="buu-hy-3PM" secondAttribute="trailing" constant="7" id="nMM-8N-d4g"/>
+                            <constraint firstItem="Rnh-Hu-ATa" firstAttribute="top" secondItem="IVm-Ah-Xnc" secondAttribute="bottom" constant="8.5" id="o1E-B7-t68"/>
+                            <constraint firstItem="m8G-Ld-MP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pqc-0t-YHY"/>
+                            <constraint firstItem="tSj-HY-UzT" firstAttribute="top" secondItem="lUv-ud-3v8" secondAttribute="bottom" constant="8" id="q5K-2G-lSZ"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rGF-dv-PWb"/>
+                            <constraint firstItem="uj2-fC-Zkj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tAv-L7-ofT"/>
+                            <constraint firstItem="vDj-0i-lS5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v5X-Mk-zNZ"/>
+                            <constraint firstItem="vDj-0i-lS5" firstAttribute="top" secondItem="buu-hy-3PM" secondAttribute="bottom" constant="8" id="yPO-5Z-lXx"/>
+                            <constraint firstItem="vDj-0i-lS5" firstAttribute="top" secondItem="buu-hy-3PM" secondAttribute="bottom" constant="30" id="zKp-rf-Vd1"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fdy-Ix-VtO"/>
+                                <exclude reference="gMP-tp-a7K"/>
+                                <exclude reference="2YN-bt-aQX"/>
+                                <exclude reference="dWg-L3-GIc"/>
+                                <exclude reference="5eu-BT-HYs"/>
+                                <exclude reference="cqM-VD-3xL"/>
+                                <exclude reference="5Tp-nf-KWm"/>
+                                <exclude reference="95w-QP-9hz"/>
+                                <exclude reference="9Or-Df-r7G"/>
+                                <exclude reference="MXs-y4-AMc"/>
+                                <exclude reference="dpF-Nd-dG6"/>
+                                <exclude reference="ere-8Y-kBB"/>
+                                <exclude reference="lY4-HK-eGX"/>
+                                <exclude reference="6xA-PJ-zf6"/>
+                                <exclude reference="Zkp-2F-Dg8"/>
+                                <exclude reference="k2M-2b-JT2"/>
+                                <exclude reference="O5e-pu-8w7"/>
+                                <exclude reference="lVV-G5-GhJ"/>
+                                <exclude reference="R24-LF-dhe"/>
+                                <exclude reference="0mc-aO-RMD"/>
+                                <exclude reference="egz-vV-e8P"/>
+                                <exclude reference="zKp-rf-Vd1"/>
+                                <exclude reference="RQe-z3-mVK"/>
+                                <exclude reference="ZjK-dw-PZU"/>
+                                <exclude reference="nMM-8N-d4g"/>
+                                <exclude reference="kVu-P0-W7b"/>
+                                <exclude reference="pqc-0t-YHY"/>
+                                <exclude reference="ADq-18-hhH"/>
+                                <exclude reference="Lw6-uO-yCg"/>
+                                <exclude reference="dbz-C1-DCA"/>
+                                <exclude reference="YZf-dx-l52"/>
+                                <exclude reference="gB9-sX-Viu"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="GeW-el-PEY"/>
+                                <include reference="fdy-Ix-VtO"/>
+                                <include reference="gMP-tp-a7K"/>
+                                <include reference="2YN-bt-aQX"/>
+                                <exclude reference="HsM-LR-ugu"/>
+                                <include reference="dWg-L3-GIc"/>
+                                <exclude reference="o1E-B7-t68"/>
+                                <include reference="5eu-BT-HYs"/>
+                                <exclude reference="DSG-b7-8vo"/>
+                                <include reference="cqM-VD-3xL"/>
+                                <exclude reference="0AP-XL-LFx"/>
+                                <include reference="5Tp-nf-KWm"/>
+                                <include reference="95w-QP-9hz"/>
+                                <include reference="9Or-Df-r7G"/>
+                                <exclude reference="H9p-bM-Xiz"/>
+                                <include reference="MXs-y4-AMc"/>
+                                <include reference="dpF-Nd-dG6"/>
+                                <include reference="ere-8Y-kBB"/>
+                                <exclude reference="hqV-p7-XBv"/>
+                                <include reference="lY4-HK-eGX"/>
+                                <include reference="6xA-PJ-zf6"/>
+                                <exclude reference="AWj-W8-sZN"/>
+                                <include reference="Zkp-2F-Dg8"/>
+                                <include reference="k2M-2b-JT2"/>
+                                <exclude reference="2F5-Q4-D6s"/>
+                                <include reference="O5e-pu-8w7"/>
+                                <include reference="lVV-G5-GhJ"/>
+                                <exclude reference="q5K-2G-lSZ"/>
+                                <include reference="R24-LF-dhe"/>
+                                <include reference="0mc-aO-RMD"/>
+                                <include reference="egz-vV-e8P"/>
+                                <exclude reference="v5X-Mk-zNZ"/>
+                                <exclude reference="yPO-5Z-lXx"/>
+                                <include reference="zKp-rf-Vd1"/>
+                                <include reference="RQe-z3-mVK"/>
+                                <include reference="ZjK-dw-PZU"/>
+                                <exclude reference="eai-tU-yso"/>
+                                <exclude reference="kvB-kq-3iB"/>
+                                <include reference="nMM-8N-d4g"/>
+                                <exclude reference="cJV-g4-avU"/>
+                                <include reference="kVu-P0-W7b"/>
+                                <exclude reference="mwe-Z2-uRR"/>
+                                <include reference="pqc-0t-YHY"/>
+                                <include reference="ADq-18-hhH"/>
+                                <exclude reference="Atn-Fk-5fR"/>
+                                <include reference="Lw6-uO-yCg"/>
+                                <exclude reference="NMX-SH-yZ5"/>
+                                <include reference="dbz-C1-DCA"/>
+                                <exclude reference="TNA-2A-6dL"/>
+                                <include reference="YZf-dx-l52"/>
+                                <include reference="gB9-sX-Viu"/>
+                                <exclude reference="gXf-xi-pLn"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="actualGuessButton" destination="0DS-pB-UnY" id="etl-ue-nHF"/>
+                        <outlet property="gameStatus" destination="Rnh-Hu-ATa" id="JhU-4y-Z77"/>
+                        <outlet property="guessTextField" destination="Va8-OU-0SX" id="caM-TF-dMc"/>
+                        <outlet property="hangmanImage" destination="uj2-fC-Zkj" id="xtE-og-hMB"/>
+                        <outlet property="incorrectGuesses" destination="lUv-ud-3v8" id="Lmc-Zn-8C0"/>
+                        <outlet property="numIncorrectGuesses" destination="vDj-0i-lS5" id="Pyf-9B-cJb"/>
+                        <outlet property="testy" destination="buu-hy-3PM" id="So2-9B-SQc"/>
+                        <outlet property="testy1" destination="hoR-GD-PXB" id="hZn-jC-Uhb"/>
+                        <outlet property="testy2" destination="tSj-HY-UzT" id="7E4-E7-jJh"/>
+                        <outlet property="wordGuessing" destination="m8G-Ld-MP7" id="b0e-Nb-aQp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1860" y="27.436281859070466"/>
+        </scene>
+        <!--Start Screen View Controller-->
+        <scene sceneID="MVU-at-nS0">
+            <objects>
+                <viewController id="6PC-9V-cAN" customClass="StartScreenViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IAi-YY-98j"/>
+                        <viewControllerLayoutGuide type="bottom" id="a1N-OD-P2k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i9j-H7-U6G">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HANGMAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNP-ZV-u7o">
+                                <rect key="frame" x="245" y="102" width="114" height="47"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-Ej-O6t">
+                                <rect key="frame" x="262" y="185" width="81" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="NEW GAME">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ycM-kF-sLf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ln5-Ej-O6t" firstAttribute="top" secondItem="TNP-ZV-u7o" secondAttribute="bottom" constant="8" id="1Ca-Qk-68h"/>
+                            <constraint firstItem="ln5-Ej-O6t" firstAttribute="centerX" secondItem="i9j-H7-U6G" secondAttribute="centerX" id="Kfe-ah-MVm"/>
+                            <constraint firstItem="TNP-ZV-u7o" firstAttribute="centerY" secondItem="i9j-H7-U6G" secondAttribute="centerY" id="lUP-GM-lzd"/>
+                            <constraint firstItem="TNP-ZV-u7o" firstAttribute="centerX" secondItem="i9j-H7-U6G" secondAttribute="centerX" id="qwO-eN-aCl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiG-Ez-Lkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.79999999999995" y="28.335832083958024"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1.gif" width="100" height="100"/>
+    </resources>
 </document>
